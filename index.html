@@ -5,34 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>منتخب مصر</title>
   <style>
-    /* جعل ارتفاع صفحة الويب يغطي الشاشة بالكامل */
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-
-    /* استخدام Flexbox لتوسيط المحتوى عموديًا وأفقيًا */
+    /* تنسيق الصفحة العامة */
     body {
       font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+      /* استخدام flex لترتيب العناصر عمودياً */
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      background-color: #f9f9f9;
     }
 
     h1 {
       color: #333;
-      margin-bottom: 20px;
+      margin-bottom: 20px; /* مسافة بين العنوان والفيديو */
     }
 
     /* تخصيص شكل الفيديو */
     video {
-      width: 80%; /* زيادة حجم الفيديو */
-      max-width: 800px; /* ضمان عدم تجاوز العرض لحد معين */
-      border: 5px solid red; /* الإطار الأحمر */
+      /* تكبير حجم الفيديو */
+      width: 90%; 
+      max-width: 900px; 
+      
+      /* إضافة الإطار الأحمر */
+      border: 5px solid red;
       border-radius: 10px;
+      
+      /* إزاحة الفيديو للأعلى قليلاً */
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -47,3 +47,5 @@
 
 </body>
 </html>
+
+
