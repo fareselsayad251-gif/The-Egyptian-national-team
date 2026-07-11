@@ -20,6 +20,7 @@
       min-height: 100vh;
     }
 
+    /* حركة نبض ثابتة للنص */
     @keyframes pulse-white-steady {
       0% { text-shadow: 0 0 5px white; }
       50% { text-shadow: 0 0 25px white, 0 0 35px white; }
@@ -38,6 +39,7 @@
       border: 5px solid red;
       border-radius: 10px;
       margin-top: 100px;
+      /* تم إزالة خصائص autoplay و loop و muted ليعود الفيديو للعمل التقليدي */
     }
   </style>
 </head>
@@ -45,8 +47,7 @@
 
   <h1>Egypt 🇪🇬</h1>
 
-  <!-- تم إضافة autoplay, loop, muted -->
-  <video autoplay loop muted playsinline>
+  <video controls>
     <source src="snaptik_7658456278041218322_v3.mp4" type="video/mp4">
     المتصفح الخاص بك لا يدعم تشغيل ملفات الفيديو.
   </video>
