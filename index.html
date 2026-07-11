@@ -20,18 +20,32 @@
       min-height: 100vh;
     }
 
-    /* حركة نبض ثابتة للنص باللون الأحمر */
+    /* حركة نبض ثابتة باللون الأحمر */
     @keyframes pulse-red-steady {
-      0% { text-shadow: 0 0 5px red; }
-      50% { text-shadow: 0 0 25px red, 0 0 35px red; }
-      100% { text-shadow: 0 0 5px red; }
+      0% { filter: drop-shadow(0 0 5px red); }
+      50% { filter: drop-shadow(0 0 25px red) drop-shadow(0 0 35px red); }
+      100% { filter: drop-shadow(0 0 5px red); }
+    }
+
+    /* تنسيق الحاوية التي تضم النص والعلم */
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+      /* تطبيق النبض على الحاوية كاملة ليظهر على النص والعلم معاً */
+      animation: pulse-red-steady 3s linear infinite;
     }
 
     h1 {
       color: #ffffff;
-      margin-bottom: 20px;
-      /* تطبيق الأنيميشن الجديد باللون الأحمر */
-      animation: pulse-red-steady 3s linear infinite;
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    .flag {
+      font-size: 3rem;
+      margin-top: 10px;
     }
 
     video {
@@ -39,13 +53,16 @@
       max-width: 1000px; 
       border: 5px solid red;
       border-radius: 10px;
-      margin-top: 100px;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
 
-  <h1>Egypt 🇪🇬</h1>
+  <div class="header-container">
+    <h1>Egypt</h1>
+    <div class="flag">🇪🇬</div>
+  </div>
 
   <video controls>
     <source src="snaptik_7658456278041218322_v3.mp4" type="video/mp4">
@@ -54,5 +71,3 @@
 
 </body>
 </html>
-
-
