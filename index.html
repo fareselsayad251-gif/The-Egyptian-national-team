@@ -2,8 +2,6 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>منتخب مصر</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -22,10 +20,15 @@
 
     h1 {
       color: #ffffff;
+      font-size: 3rem;
+      /* توهج أبيض شفاف للنص */
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
       margin-bottom: 20px;
-      /* إضافة توهج للنص باللون الأبيض مع إزاحة خفيفة */
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073;
-      transition: 0.3s;
+    }
+
+    /* توهج خاص لعلم مصر (نستخدم span للفصله عن النص) */
+    .flag-glow {
+      text-shadow: 0 0 15px rgba(255, 0, 0, 0.4), 0 0 25px rgba(255, 255, 255, 0.4), 0 0 35px rgba(0, 0, 0, 0.4);
     }
 
     video {
@@ -33,31 +36,30 @@
       max-width: 1000px; 
       border: 5px solid red;
       border-radius: 10px;
-      margin-top: 100px;
+      margin-top: 50px;
       background-color: rgba(255, 255, 255, 0.8);
       
-      /* إضافة توهج أحمر مستمر حول الإطار */
-      box-shadow: 0 0 15px red, 0 0 30px red;
+      /* توهج أحمر شفاف للإطار */
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
       
-      /* إضافة حركة نبض خفيفة للتوهج لجعله أكثر حيوية */
-      animation: glow-pulse 1.5s infinite alternate;
+      /* حركة نبض أهدأ */
+      animation: glow-pulse 2s infinite alternate;
     }
 
-    /* تعريف حركة النبض للتوهج */
     @keyframes glow-pulse {
-      from { box-shadow: 0 0 10px red, 0 0 20px red; }
-      to { box-shadow: 0 0 20px red, 0 0 40px red, 0 0 60px red; }
+      from { box-shadow: 0 0 10px rgba(255, 0, 0, 0.2); }
+      to { box-shadow: 0 0 30px rgba(255, 0, 0, 0.4); }
     }
   </style>
 </head>
 <body>
 
-  <h1>Egypt 🇪🇬</h1>
+  <h1>Egypt <span class="flag-glow">🇪🇬</span></h1>
 
   <video controls>
     <source src="snaptik_7658456278041218322_v3.mp4" type="video/mp4">
-    المتصفح الخاص بك لا يدعم تشغيل ملفات الفيديو.
   </video>
 
 </body>
 </html>
+
