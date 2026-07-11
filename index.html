@@ -20,22 +20,17 @@
       min-height: 100vh;
     }
 
-    /* تعريف حركة النبض */
-    @keyframes pulse-red {
-      0%, 100% { box-shadow: 0 0 10px 2px red; }
-      50% { box-shadow: 0 0 30px 10px red; }
-    }
-
+    /* تعريف حركة النبض البطيئة للنص فقط */
     @keyframes pulse-white {
       0%, 100% { text-shadow: 0 0 5px white; }
-      50% { text-shadow: 0 0 20px white, 0 0 30px white; }
+      50% { text-shadow: 0 0 20px white, 0 0 40px white; }
     }
 
     h1 {
       color: #ffffff;
       margin-bottom: 20px;
-      /* تطبيق نبض النص */
-      animation: pulse-white 0.8s infinite alternate;
+      /* تطبيق نبض أبطأ (2s بدلاً من 0.8s) */
+      animation: pulse-white 2s infinite alternate;
     }
 
     video {
@@ -44,8 +39,7 @@
       border: 5px solid red;
       border-radius: 10px;
       margin-top: 100px;
-      /* تطبيق نبض الإطار */
-      animation: pulse-red 0.8s infinite alternate;
+      /* إزالة الأنيميشن من هنا ليبقى الإطار ثابتاً */
     }
   </style>
 </head>
@@ -60,4 +54,3 @@
 
 </body>
 </html>
-
