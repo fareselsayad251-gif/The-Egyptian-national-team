@@ -9,30 +9,36 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      margin: 20px;
+      margin: 0;
+      padding: 20px;
+      
+      /* إضافة صورة الخلفية */
+      background-image: url('your-image.jpg'); /* ضع هنا اسم ملف صورتك */
+      background-size: cover;          /* جعل الصورة تغطي كامل الشاشة */
+      background-position: center;     /* توسيط الصورة */
+      background-attachment: fixed;    /* ثبات الخلفية عند التمرير */
+      
       /* استخدام flex لترتيب العناصر عمودياً */
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100vh;
     }
 
     h1 {
-      color: #333;
-      margin-bottom: 20px; /* مسافة بين العنوان والفيديو */
+      color: #ffffff; /* جعل اللون أبيض ليكون واضحاً فوق الخلفية */
+      text-shadow: 2px 2px 4px #000; /* إضافة ظل للنص لزيادة الوضوح */
+      margin-bottom: 20px;
     }
 
     /* تخصيص شكل الفيديو */
     video {
-      /* تكبير حجم الفيديو */
-      width: 100%; 
-      max-width: 1000px; 
-      
-      /* إضافة الإطار الأحمر */
+      width: 90%; 
+      max-width: 900px; 
       border: 5px solid red;
       border-radius: 10px;
-      
-      /* إزاحة الفيديو للأعلى قليلاً */
-      margin-top: 90px;
+      margin-top: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* إضافة خلفية شفافة للفيديو ليتناسق مع الصورة */
     }
   </style>
 </head>
@@ -47,5 +53,3 @@
 
 </body>
 </html>
-
-
