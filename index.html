@@ -1,62 +1,99 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 20px;
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #333;
+<meta charset="UTF-8">
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    background:#333;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+/* نزول + توهج في نفس الوقت */
+@keyframes dropGlow{
+    0%{
+        transform:translateY(-300px);
+        opacity:0;
+        filter:drop-shadow(0 0 5px red);
     }
 
-    /* حركة الهبوط فقط */
-    @keyframes slideDown {
-      0% { transform: translateY(-300px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
+    25%{
+        filter:drop-shadow(0 0 20px red)
+               drop-shadow(0 0 35px red);
     }
 
-    /* حركة نبض التوهج فقط */
-    @keyframes pulse-red-steady {
-      0%, 100% { filter: drop-shadow(0 0 5px red); }
-      50% { filter: drop-shadow(0 0 20px red) drop-shadow(0 0 30px red); }
+    50%{
+        filter:drop-shadow(0 0 10px red);
     }
 
-    .header-container {
-      /* هنا الهبوط فقط */
-      animation: slideDown 3s ease-out forwards;
+    75%{
+        filter:drop-shadow(0 0 25px red)
+               drop-shadow(0 0 40px red);
     }
 
-    .pulse-wrapper {
-      /* هنا التوهج فقط - سيعمل من لحظة ظهور العنصر */
-      animation: pulse-red-steady 1.5s linear infinite;
-      display: inline-block;
-      padding: 20px;
+    100%{
+        transform:translateY(0);
+        opacity:1;
+        filter:drop-shadow(0 0 15px red)
+               drop-shadow(0 0 30px red);
+    }
+}
+
+/* نبض التوهج المستمر */
+@keyframes glow{
+    0%,100%{
+        filter:drop-shadow(0 0 5px red);
     }
 
-    h1 { color: #ffffff; margin: 0; font-size: 3rem; }
-    .flag { font-size: 2rem; }
-    video { width: 100%; max-width: 800px; border: 5px solid red; margin-top: 50px; }
-  </style>
+    50%{
+        filter:drop-shadow(0 0 20px red)
+               drop-shadow(0 0 35px red);
+    }
+}
+
+.logo{
+    display:inline-block;
+
+    /* الحركة الأولى */
+    animation:dropGlow 3s ease-out forwards,
+              glow 1.5s linear infinite;
+}
+
+h1{
+    color:#fff;
+    margin:0;
+    font-size:3rem;
+}
+
+.flag{
+    font-size:2rem;
+}
+
+video{
+    width:100%;
+    max-width:800px;
+    border:5px solid red;
+    margin-top:50px;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="header-container">
-    <div class="pulse-wrapper">
-      <h1>Egypt</h1>
-      <div class="flag">🇪🇬</div>
-    </div>
-  </div>
+<div class="logo">
+    <h1>Egypt</h1>
+    <div class="flag">🇪🇬</div>
+</div>
 
-  <video controls>
+<video controls>
     <source src="snaptik_7658456278041218322_v3.mp4" type="video/mp4">
-  </video>
+</video>
 
 </body>
 </html>
