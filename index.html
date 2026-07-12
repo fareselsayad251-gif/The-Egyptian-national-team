@@ -10,7 +10,7 @@
       text-align: center;
       margin: 0;
       padding: 20px;
-      background-image: url('1783784773553.jpg');
+      /* تأكد من وجود صورة الخلفية في مسارها الصحيح */
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -18,23 +18,29 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      overflow-x: hidden; /* لمنع ظهور شريط تمرير عند الحركة */
     }
 
-    /* حركة نبض ثابتة باللون الأحمر */
+    /* حركة النبض (الهالة) */
     @keyframes pulse-red-steady {
       0% { filter: drop-shadow(0 0 5px red); }
       50% { filter: drop-shadow(0 0 25px red) drop-shadow(0 0 35px red); }
       100% { filter: drop-shadow(0 0 5px red); }
     }
 
-    /* تنسيق الحاوية التي تضم النص والعلم */
+    /* حركة النزول من الأعلى */
+    @keyframes slideDown {
+      from { transform: translateY(-200px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
     .header-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-bottom: 20px;
-      /* تطبيق النبض على الحاوية كاملة ليظهر على النص والعلم معاً */
-      animation: pulse-red-steady 3s linear infinite;
+      /* دمج الحركتين معاً: النزول مرة واحدة، والنبض بشكل مستمر */
+      animation: slideDown 2s ease-out forwards, pulse-red-steady 3s linear infinite;
     }
 
     h1 {
