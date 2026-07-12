@@ -10,7 +10,8 @@
       text-align: center;
       margin: 0;
       padding: 20px;
-      /* تأكد من وجود صورة الخلفية في مسارها الصحيح */
+      /* تم إعادة إضافة مسار الصورة هنا */
+      background-image: url('1783784773553.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -18,7 +19,7 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      overflow-x: hidden; /* لمنع ظهور شريط تمرير عند الحركة */
+      overflow-x: hidden;
     }
 
     /* حركة النبض (الهالة) */
@@ -39,7 +40,7 @@
       flex-direction: column;
       align-items: center;
       margin-bottom: 20px;
-      /* دمج الحركتين معاً: النزول مرة واحدة، والنبض بشكل مستمر */
+      /* دمج الحركتين معاً */
       animation: slideDown 2s ease-out forwards, pulse-red-steady 3s linear infinite;
     }
 
