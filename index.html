@@ -18,23 +18,30 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      overflow-x: hidden; /* لمنع ظهور شريط تمرير أفقي أثناء الحركة */
     }
 
-    /* حركة نبض ثابتة باللون الأحمر */
+    /* حركة الهبوط من الأعلى */
+    @keyframes slideDown {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* حركة النبض الثابت */
     @keyframes pulse-red-steady {
       0% { filter: drop-shadow(0 0 5px red); }
       50% { filter: drop-shadow(0 0 25px red) drop-shadow(0 0 35px red); }
       100% { filter: drop-shadow(0 0 5px red); }
     }
 
-    /* تنسيق الحاوية التي تضم النص والعلم */
     .header-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-bottom: 20px;
-      /* تطبيق النبض على الحاوية كاملة ليظهر على النص والعلم معاً */
-      animation: pulse-red-steady 3s linear infinite;
+      
+      /* دمج حركتين: الهبوط مرة واحدة، ثم النبض للأبد */
+      animation: slideDown 1.5s ease-out forwards, pulse-red-steady 3s linear 1.5s infinite;
     }
 
     h1 {
