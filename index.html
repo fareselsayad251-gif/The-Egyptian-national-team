@@ -18,16 +18,16 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      overflow-x: hidden; /* لمنع ظهور شريط تمرير أفقي أثناء الحركة */
+      overflow-x: hidden;
     }
 
-    /* حركة الهبوط من الأعلى */
+    /* حركة الهبوط */
     @keyframes slideDown {
-      0% { transform: translateY(-100%); opacity: 0; }
+      0% { transform: translateY(-200px); opacity: 0; }
       100% { transform: translateY(0); opacity: 1; }
     }
 
-    /* حركة النبض الثابت */
+    /* حركة النبض */
     @keyframes pulse-red-steady {
       0% { filter: drop-shadow(0 0 5px red); }
       50% { filter: drop-shadow(0 0 25px red) drop-shadow(0 0 35px red); }
@@ -40,8 +40,8 @@
       align-items: center;
       margin-bottom: 20px;
       
-      /* دمج حركتين: الهبوط مرة واحدة، ثم النبض للأبد */
-      animation: slideDown 1.5s ease-out forwards, pulse-red-steady 3s linear 1.5s infinite;
+      /* تشغيل حركتي الهبوط والنبض معاً في نفس الوقت */
+      animation: slideDown 1.5s ease-out forwards, pulse-red-steady 3s linear infinite;
     }
 
     h1 {
@@ -78,3 +78,4 @@
 
 </body>
 </html>
+
