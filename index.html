@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>منتخب مصر</title>
   <style>
+    :root {
+      /* قم بتغيير اسم الصورة هنا فقط */
+      --bg-image: url('1783784773553.jpg');
+    }
+
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       margin: 0;
       padding: 20px;
-      /* تم إعادة إضافة مسار الصورة هنا */
-      background-image: url('1783784773553.jpg');
+      /* استخدام المتغير هنا */
+      background-image: var(--bg-image);
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -40,7 +45,7 @@
       flex-direction: column;
       align-items: center;
       margin-bottom: 20px;
-      /* دمج الحركتين معاً */
+      /* دمج الحركتين */
       animation: slideDown 2s ease-out forwards, pulse-red-steady 3s linear infinite;
     }
 
