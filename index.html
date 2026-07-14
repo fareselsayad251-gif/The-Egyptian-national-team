@@ -67,6 +67,32 @@
       border-radius: 10px;
       margin-top: 5px;
     }
+
+    /* --- التنسيقات الجديدة الخاصة بالصور --- */
+
+    /* حاوية مخصصة لضمان تمركز العناصر ومحاذاة حاوية الصور لليسار */
+    .content-wrapper {
+      width: 100%;
+      max-width: 1000px; /* نفس الحد الأقصى لعرض الفيديو */
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* محاذاة المحتوى داخلها لليسار */
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: column; /* ترتيب رأسي (تحت بعض) */
+      gap: 20px; /* مسافة بين كل صورة والتانية */
+    }
+
+    .styled-image {
+      width: 300px; /* حجم الصورة (يمكنك تعديله حسب رغبتك) */
+      height: 300px; /* جعل الارتفاع مساوٍ للعرض لضمان شكل مربع */
+      object-fit: cover; /* لضمان عدم تمدد أو تشوه الصورة داخل المربع */
+      border: 5px solid red; /* نفس سمك ولون فريم الفيديو */
+      border-radius: 10px; /* نفس انحناء الفيديو */
+    }
   </style>
 </head>
 <body>
@@ -80,6 +106,16 @@
     <source src="snaptik_7658456278041218322_v3.mp4" type="video/mp4">
     المتصفح الخاص بك لا يدعم تشغيل ملفات الفيديو.
   </video>
+
+  <div class="content-wrapper">
+    <div class="images-container">
+      <img src="image1.jpg" alt="الصورة الأولى" class="styled-image">
+      <img src="image2.jpg" alt="الصورة الثانية" class="styled-image">
+      <img src="image3.jpg" alt="الصورة الثالثة" class="styled-image">
+      <img src="image4.jpg" alt="الصورة الرابعة" class="styled-image">
+      <img src="image5.jpg" alt="الصورة الخامسة" class="styled-image">
+    </div>
+  </div>
 
 </body>
 </html>
